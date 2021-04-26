@@ -20,22 +20,16 @@ public class circle_selected_color_change : MonoBehaviour
    // public Sprite item;
     
     void OnMouseUp () {
-        if (global.partChecker==16 && global.rowChecker==1){
-            //global.staticChecker = true;
-           // Debug.Log (global.staticChecker);
-            SceneManager.LoadScene("congrats");
-           // global.rowChecker = 0;
-           // global.partChecker = 0;
-        } 
-        else {
-            if (selected1 == 0){
-                objName1 = gameObject.name;
-                handleName1 = objName1;
-            }
-            else if (selected1 == 1) {
-                objName2 = gameObject.name;
-                handleName2 = objName2;
-            }
+        
+        
+        if (selected1 == 0){
+            objName1 = gameObject.name;
+            handleName1 = objName1;
+        }
+        else if (selected1 == 1) {
+            objName2 = gameObject.name;
+            handleName2 = objName2;
+        }
 
 
         if (selected1 == 1){
@@ -118,8 +112,14 @@ public class circle_selected_color_change : MonoBehaviour
         }
         else {global.rowChecker = 0;}
        // Debug.Log(global.rowChecker);
+        if (global.partChecker==16 && global.rowChecker==1){
+            //global.staticChecker = true;
+           // Debug.Log (global.staticChecker);
+            SceneManager.LoadScene("congrats");
+           // global.rowChecker = 0;
+           // global.partChecker = 0;
+        } 
     }
-        }
 
             
 

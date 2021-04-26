@@ -95,7 +95,7 @@ public class rotate_part_by_tap : MonoBehaviour
     }*/
     void check_rot0 (GameObject objName, string findName){
         objName = GameObject.Find(findName);
-        if (objName.transform.rotation == target0) {
+        if (objName.transform.rotation.eulerAngles == vector0) {
         global.partChecker += 1;
         }
         else {global.partChecker = 0;}
@@ -103,21 +103,21 @@ public class rotate_part_by_tap : MonoBehaviour
 
     void check_rot90 (GameObject objName, string findName){
         objName = GameObject.Find(findName);
-        if (objName.transform.rotation == target90) {
+        if (objName.transform.rotation.eulerAngles == vector90) {
         global.partChecker += 1;
         }
         else {global.partChecker = 0;}
     }
     void check_rot180 (GameObject objName, string findName){
         objName = GameObject.Find(findName);
-        if (objName.transform.rotation == target180) {
+        if (objName.transform.rotation.eulerAngles == vector180) {
         global.partChecker += 1;
         }
         else {global.partChecker = 0;}
     }
     void check_rot270 (GameObject objName, string findName){
         objName = GameObject.Find(findName);
-        if (objName.transform.rotation == target270) {
+        if (objName.transform.rotation.eulerAngles == vector270) {
         global.partChecker += 1;
         }
         else {global.partChecker = 0;}
@@ -167,11 +167,16 @@ public class rotate_part_by_tap : MonoBehaviour
    // private int partChecker = 0, rowChecker = 0; 
     public GameObject obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9, obj10, obj11, obj12, obj13, obj14, obj15, obj16;
     //public GameObject row1, row2, row3, row4;
-    Quaternion target0 = Quaternion.Euler(0, 0, 0);
-    Quaternion target90 = Quaternion.Euler(0, 0, -90);
-    Quaternion target180 = Quaternion.Euler(0, 0, 180);
-    Quaternion target270 = Quaternion.Euler(0, 0, 90);
+   // Quaternion target0 = Quaternion.Euler(0, 0, 0);
+   // Quaternion target90 = Quaternion.Euler(0, 0, -90);
+   // Quaternion target180 = Quaternion.Euler(0, 0, 180);
+   // Quaternion target270 = Quaternion.Euler(0, 0, 90);
 
+
+    Vector3 vector0= new Vector3(0, 0, 0);
+    Vector3 vector90= new Vector3(0, 0, 270);
+    Vector3 vector180= new Vector3(0, 0, 180);
+    Vector3 vector270= new Vector3(0, 0, 90);
     public GameObject part;
     
 
@@ -191,8 +196,9 @@ public class rotate_part_by_tap : MonoBehaviour
            // Debug.Log (global.staticChecker);
        //     SceneManager.LoadScene("congrats");
       //  } 
-        this.transform.Rotate(0.0f, 0.0f, -90.0f, Space.Self); 
+        this.transform.Rotate(0, 0, -90); 
        // Debug.Log (transform.rotation.eulerAngles.z);  
+       //Debug.Log (transform.rotation.eulerAngles);
         all_rot_check ();
         //Debug.Log (global.partChecker);
         if (global.rowChecker==1 & global.partChecker==16){
