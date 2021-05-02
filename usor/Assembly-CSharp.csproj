@@ -36,12 +36,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\rotate_from_90.cs" />
      <Compile Include="Assets\Scripts\to_congrats.cs" />
      <Compile Include="Assets\Scripts\select_handle.cs" />
      <Compile Include="Assets\Scripts\next_lvl_button.cs" />
-     <Compile Include="Assets\Scripts\check_level.cs" />
-     <Compile Include="Assets\Scripts\rotate_from_0.cs" />
      <Compile Include="Assets\Scripts\restart_2.cs" />
      <Compile Include="Assets\Scripts\rotate_by_tap_no_handles.cs" />
      <Compile Include="Assets\Scripts\rotate_part_by_tap.cs" />
@@ -49,6 +46,16 @@
      <Compile Include="Assets\Scripts\global.cs" />
      <Compile Include="Assets\Scripts\rotate.cs" />
      <Compile Include="Assets\Scripts\restart_button.cs" />
+     <Compile Include="Assets\Scripts\lvl_number_increment.cs" />
+     <Compile Include="Assets\Scripts\rotate_2_lvl.cs" />
+     <Compile Include="Assets\Scripts\rotate_3_lvl.cs" />
+     <Compile Include="Assets\Scripts\rotate_4_lvl.cs" />
+     <Compile Include="Assets\Scripts\rotate_with_handle_6_lvl.cs" />
+     <Compile Include="Assets\Scripts\rotate_with_handle_7_lvl.cs" />
+     <Compile Include="Assets\Scripts\vertical_handle.cs" />
+     <Compile Include="Assets\Scripts\rotate_with_handle_8_lvl.cs" />
+     <Compile Include="Assets\Scripts\to_menu.cs" />
+     <Compile Include="Assets\Scripts\to_lvl.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:/univers/unity/2021.1.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

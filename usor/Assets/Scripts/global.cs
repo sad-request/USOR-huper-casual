@@ -6,7 +6,7 @@ public class global : MonoBehaviour
 {
     // Start is called before the first frame update
     public static bool staticChecker = false;
-    public static int partChecker = 0, rowChecker = 0;
+    public static int partChecker = 0, rowChecker = 0, lvlNumber=1;
 
    /*  static void check_rot0 (GameObject objName, string findName){
         objName = GameObject.Find(findName);

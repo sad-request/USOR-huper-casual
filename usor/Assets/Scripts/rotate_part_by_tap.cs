@@ -126,40 +126,40 @@ public class rotate_part_by_tap : MonoBehaviour
     void all_rot_check () {
         global.partChecker = 0;
       //  Debug.Log (global.partChecker);
-        check_rot0(obj1, "blue");
+        check_rot0(obj1, "1_1");
       //  Debug.Log (global.partChecker);
-        check_rot270(obj2, "blue (1)");
+        check_rot270(obj2, "1_2");
       //  Debug.Log (global.partChecker);
-        check_rot180(obj3, "pink (3)");
+        check_rot180(obj3, "1_3");
       //  Debug.Log (global.partChecker);
-        check_rot90(obj4, "pink (1)");
+        check_rot90(obj4, "1_4");
        // Debug.Log (global.partChecker);
 
-        check_rot90(obj5, "blue (2)");
+        check_rot90(obj5, "1_5");
        // Debug.Log (global.partChecker);
-        check_rot180(obj6, "gold (2)");
+        check_rot180(obj6, "1_6");
       //  Debug.Log (global.partChecker);
-        check_rot270(obj7, "gold (1)");
+        check_rot270(obj7, "1_7");
       //  Debug.Log (global.partChecker);
-        check_rot0(obj8, "pink (2)");
+        check_rot0(obj8, "1_8");
      //   Debug.Log (global.partChecker);
 
-        check_rot180(obj9, "pink (4)");
+        check_rot180(obj9, "1_9");
       //  Debug.Log (global.partChecker);
-        check_rot90(obj10, "gold (4)");
+        check_rot90(obj10, "1_10");
       //  Debug.Log (global.partChecker);
-        check_rot0(obj11, "gold (3)");
+        check_rot0(obj11, "1_11");
       //  Debug.Log (global.partChecker);
-        check_rot270(obj12, "blue (3)");
+        check_rot270(obj12, "1_12");
       //  Debug.Log (global.partChecker);
         
-        check_rot270(obj13, "pink (5)");
+        check_rot270(obj13, "1_13");
        // Debug.Log (global.partChecker);
-        check_rot0(obj14, "pink (6)");
+        check_rot0(obj14, "1_14");
        // Debug.Log (global.partChecker);
-        check_rot90(obj15, "blue (5)");
+        check_rot90(obj15, "1_15");
        // Debug.Log (global.partChecker);
-        check_rot180(obj16, "blue (4)");
+        check_rot180(obj16, "1_16");
        // Debug.Log (global.partChecker);
     }
 
@@ -186,7 +186,7 @@ public class rotate_part_by_tap : MonoBehaviour
    //     Debug.Log (part.transform.rotation.eulerAngles.z);
    // }
 
-    void OnMouseUp() { 
+    public void OnMouseUp() { 
         //global.partChecker = 0;
         //global.rowChecker = 0;
        // all_rot_check ();
@@ -204,7 +204,7 @@ public class rotate_part_by_tap : MonoBehaviour
         if (global.rowChecker==1 & global.partChecker==16){
             //global.staticChecker = true;
            // Debug.Log (global.staticChecker);
-            SceneManager.LoadScene("congrats2");
+            SceneManager.LoadScene("congrats");
         }      
         //Debug.Log (global.rowChecker);
         

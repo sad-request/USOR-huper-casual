@@ -1,0 +1,111 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public class vertical_handle : MonoBehaviour
+{
+    public Sprite circle_handle, selected_circle, shadow, handleSp;
+    static int selected1 = 0;
+
+    public GameObject g1, g2, g3, g4;
+    public Vector3 vec1;
+    public Vector3 vec2 = new Vector3(2F, 2F, 2F);
+
+    static string handleName1, handleName2;
+    private string objName1, objName2;
+
+    public GameObject row1, row2, row3, row4;
+   // public Sprite item;
+    
+    public void OnClick () {
+
+        if (selected1 == 0){
+            objName1 = gameObject.name;
+            handleName1 = objName1;
+            //Debug.Log (gameObject.name);
+        }
+        else if (selected1 == 1) {
+            objName2 = gameObject.name;
+            handleName2 = objName2;
+            //Debug.Log (gameObject.name);
+        }
+
+
+        if (selected1 == 1){
+            g1 = GameObject.Find(handleName1);  
+            g2 = GameObject.Find(handleName2);
+            //Debug.Log (handleName1);
+            //Debug.Log (handleName2);
+            vec1 = new Vector3(g1.gameObject.transform.position.x, g1.gameObject.transform.position.y, g1.gameObject.transform.position.z);
+            vec2 = new Vector3(g2.gameObject.transform.position.x, g2.gameObject.transform.position.y, g2.gameObject.transform.position.z);
+            vec1 = g1.gameObject.transform.position;
+            vec2 = g2.gameObject.transform.position;
+            g1.gameObject.transform.position = vec2;
+            g2.gameObject.transform.position = vec1; 
+           // g1.GetComponent<Image>().sprite = circle_handle;
+           // g2.GetComponent<Image>().sprite = circle_handle;
+            selected1 = 2;
+        }
+        //Debug.Log (selected1);
+        if (selected1 > 1) {
+            if (g1.GetComponent <Image> ().sprite == selected_circle
+            ){
+                g1.GetComponent<Image>().sprite = circle_handle;
+               // Debug.Log (g1.name);
+               //Debug.Log (this.transform.Find("handle"));
+                //this.transform.Find("handle").GetComponent<Image>().sprite = handleSp;
+            }
+                //Debug.Log ("g1.name");
+            if (g2.GetComponent <Image> ().sprite == selected_circle
+            ){
+               //  Debug.Log (this.transform.Find("handle"));
+                g2.GetComponent<Image>().sprite = circle_handle;
+               // Debug.Log (g2.name);
+               // this.transform.Find("handle").GetComponent<Image>().sprite = handleSp;
+                }
+              //  Debug.Log ("g2.name");
+            selected1=0;
+        }
+        else if (GetComponent <Image> ().sprite == circle_handle
+        ) {
+            GetComponent <Image> ().sprite = selected_circle;
+            //this.transform.Find("handle").GetComponent<Image>().sprite = shadow;
+            selected1 += 1;            
+        }
+        else if (GetComponent <Image> ().sprite == selected_circle 
+         ){
+            GetComponent <Image> ().sprite = circle_handle;
+            //Debug.Log (this.transform.Find("handle"));
+           // this.transform.Find("handle").GetComponent<Image>().sprite = handleSp;
+            selected1 = 0;
+        }
+       // Debug.Log (selected1);
+
+
+
+        row1 = GameObject.Find("circle-handle1");
+        row2 = GameObject.Find("circle-handle2");
+        row3 = GameObject.Find("circle-handle3");
+        row4 = GameObject.Find("circle-handle4");
+
+
+        if ((row1.transform.position.x < row2.transform.position.x)
+        && (row2.transform.position.x < row3.transform.position.x)
+        && (row3.transform.position.x < row4.transform.position.x)
+        && (row1.transform.position.x < row4.transform.position.x)) {
+            global.rowChecker = 1;
+        }
+        else {global.rowChecker = 0;}
+       // Debug.Log(global.rowChecker);
+        if (global.partChecker==16 && global.rowChecker==1){
+            //global.staticChecker = true;
+           // Debug.Log (global.staticChecker);
+            SceneManager.LoadScene("congrats");
+           // global.rowChecker = 0;
+           // global.partChecker = 0;
+        } 
+    }
+
+}

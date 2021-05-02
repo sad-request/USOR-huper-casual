@@ -104,7 +104,7 @@ public class rotate_by_tap_no_handles : MonoBehaviour
           //SceneManager.LoadScene("congrats");
       }
   }*/
-  void OnMouseUp() { 
+  public void OnMouseUp() { 
       //global.partChecker = 0;
       //global.rowChecker = 0;
       // all_rot_check ();

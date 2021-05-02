@@ -19,64 +19,70 @@ public class circle_selected_color_change : MonoBehaviour
     public GameObject row1, row2, row3, row4;
    // public Sprite item;
     
-    void OnMouseUp () {
+    public void OnClick () {
         
         
         if (selected1 == 0){
             objName1 = gameObject.name;
             handleName1 = objName1;
+            //Debug.Log (gameObject.name);
         }
         else if (selected1 == 1) {
             objName2 = gameObject.name;
             handleName2 = objName2;
+            //Debug.Log (gameObject.name);
         }
 
 
         if (selected1 == 1){
-            g1 = GameObject.Find(handleName1);
+            g1 = GameObject.Find(handleName1);  
             g2 = GameObject.Find(handleName2);
+            //Debug.Log (handleName1);
+            //Debug.Log (handleName2);
             vec1 = new Vector3(g1.gameObject.transform.position.x, g1.gameObject.transform.position.y, g1.gameObject.transform.position.z);
             vec2 = new Vector3(g2.gameObject.transform.position.x, g2.gameObject.transform.position.y, g2.gameObject.transform.position.z);
             vec1 = g1.gameObject.transform.position;
             vec2 = g2.gameObject.transform.position;
             g1.gameObject.transform.position = vec2;
             g2.gameObject.transform.position = vec1; 
-           // g1.GetComponent<SpriteRenderer>().sprite = circle_handle;
-           // g2.GetComponent<SpriteRenderer>().sprite = circle_handle;
+           // g1.GetComponent<Image>().sprite = circle_handle;
+           // g2.GetComponent<Image>().sprite = circle_handle;
             selected1 = 2;
         }
-
-
+        //Debug.Log (selected1);
         if (selected1 > 1) {
-            if (g1.GetComponent <SpriteRenderer> ().sprite == selected_circle
+            if (g1.GetComponent <Image> ().sprite == selected_circle
             ){
-                g1.GetComponent<SpriteRenderer>().sprite = circle_handle;
+                g1.GetComponent<Image>().sprite = circle_handle;
+               // Debug.Log (g1.name);
                //Debug.Log (this.transform.Find("handle"));
-                //this.transform.Find("handle").GetComponent<SpriteRenderer>().sprite = handleSp;
+                //this.transform.Find("handle").GetComponent<Image>().sprite = handleSp;
             }
                 //Debug.Log ("g1.name");
-            if (g2.GetComponent <SpriteRenderer> ().sprite == selected_circle
+            if (g2.GetComponent <Image> ().sprite == selected_circle
             ){
-                // Debug.Log (this.transform.Find("handle"));
-                g2.GetComponent<SpriteRenderer>().sprite = circle_handle;
-               // this.transform.Find("handle").GetComponent<SpriteRenderer>().sprite = handleSp;
+               //  Debug.Log (this.transform.Find("handle"));
+                g2.GetComponent<Image>().sprite = circle_handle;
+               // Debug.Log (g2.name);
+               // this.transform.Find("handle").GetComponent<Image>().sprite = handleSp;
                 }
               //  Debug.Log ("g2.name");
             selected1=0;
         }
-        else if (GetComponent <SpriteRenderer> ().sprite == circle_handle
+        else if (GetComponent <Image> ().sprite == circle_handle
         ) {
-            GetComponent <SpriteRenderer> ().sprite = selected_circle;
-            //this.transform.Find("handle").GetComponent<SpriteRenderer>().sprite = shadow;
+            GetComponent <Image> ().sprite = selected_circle;
+            //this.transform.Find("handle").GetComponent<Image>().sprite = shadow;
             selected1 += 1;            
         }
-        else if (GetComponent <SpriteRenderer> ().sprite == selected_circle 
+        else if (GetComponent <Image> ().sprite == selected_circle 
          ){
-            GetComponent <SpriteRenderer> ().sprite = circle_handle;
+            GetComponent <Image> ().sprite = circle_handle;
             //Debug.Log (this.transform.Find("handle"));
-           // this.transform.Find("handle").GetComponent<SpriteRenderer>().sprite = handleSp;
+           // this.transform.Find("handle").GetComponent<Image>().sprite = handleSp;
             selected1 = 0;
         }
+       // Debug.Log (selected1);
 
 
 
